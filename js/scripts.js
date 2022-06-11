@@ -52,39 +52,3 @@ function hello(){
     location.reload();
 }
 
-
-// function edad () {
-//     let inputValue = document.getElementById("domTextElement").value;
-//     for (i = inputValue ; i<100 ; i++){
-
-//         document.getElementById("edad").innerHTML = i ;
-
-//     }
-
-    
-    
-// }
-
-
-// let buttonToggle = () => {
-//     const button = document.getElementById("menu-button").classList,
-//     isopened = "is-opened";
-//     let isOpen = button.contains(isopened);
-//     if(isOpen) {
-//       button.remove(isopened);
-//     } 
-//     else {
-//       button.add(isopened);
-//     }
-// } 
-
-
-// function update() {
-//     var select = document.getElementById('language');
-//     var option = select.options[select.selectedIndex];
-
-//     document.getElementById('value').value = option.value;
-//     document.getElementById('text').value = option.text;
-// }
-
-// update();
