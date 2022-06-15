@@ -4,6 +4,12 @@ let questionBox = document.getElementById("question");
 let btnVolver = document.getElementById("btnVolver");
 let answer = document.getElementById("answer");
 
+function bye(){
+    questionBox.style.display = "none"
+    btnVolver.style.display = "block"
+    answer.style.display = "block"
+}
+
 function locura () {
     let name = document.getElementById("name").value;
     let select = document.getElementById('userSelection');
@@ -38,11 +44,7 @@ function locura () {
 
     }
 
-    function bye(){
-        questionBox.style.display = "none"
-        btnVolver.style.display = "block"
-        answer.style.display = "block"
-    }
+    
     bye()
     }
     
