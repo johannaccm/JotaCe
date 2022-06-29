@@ -25,11 +25,12 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:100,200,300,400,500,600,700,800,900">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="bgImage">
       
-            <div class="cr"></div>
-            <div class="dot"></div>
-            <video autoplay muted loop id="myVideo" src="./images/coding.mp4"></video>
+       
+            <video autoplay muted loop id="myVideo">
+                <source src="./images/coding.mp4" type="video/mp4">
+            </video>
 
             <div class="header">
                 <div class="container">
@@ -61,52 +62,47 @@
 
 
             <div class="container">
-                <!-- Paso 1 -->
-                <div class="row boxWrap paso1"  id="paso1">
-                    <h2>¡Hola! Mi nombre es Johanna y soy 
-                        <div class="rw-words rw-words-1">
-                        <span>Diseñador Gráfico.</span>
-                        <span>Director Creativo.</span>
-                        <span>Diseñador Web.</span>
-                      </div>
-                    </h2>
-                    <h1>y tú ¿Quién eres?</h1>
-                    <input type="text" id="name" placeholder="Tu nombre" onkeyup="success()">
-                    <button type="button" disabled class="btn" id="next" onclick="siguiente()"> 
-                        Siguiente
-                    </button>
+                <div class="square">
+                    <p>ENTREGA #1 CODERHOUSE</p>
+                    
 
-                </div>
+                    <div id="question" class="ease">
+                        <h1>Esto es una prueba de JavaScript</h1>
+                        <h4> 
+                            Calcula tu porcentaje de <span>LOCURA</span> en 2 pasos:
+                        </h4> 
+                        
+                        <label for="name">Nombre </label>
+                        <input type="text" id="name">
+                        <br>
+                        
+                        
+                        <label for="userSelection">¿Quién eres? </label>
+                        <select id="userSelection">
+                            <option value="1">Humano</option>
+                            <option value="2">Un ser vivo</option>
+                            <option value="3">Robot</option>
+                            <option value="4">Qué te importa</option>
+                        </select>
+                        <br>
 
-                <!-- Paso 2 -->
-                <div class="boxWrap" id="paso2">
-                    <div class="row" id="salute">
-
-                        <h2>Selecciona el servicio de tu interés</h2>
-                        <div class="col-6" id="design">
-                            <div class="box">
-                                <i class="bi bi-brush"></i>
-                                <h1>Diseño Gráfico</h1>
-                            </div>
-                        </div>
-
-                        <div class="col-6" id="webDevelop">
-                            <div class="box">
-                                <i class="bi bi-code"></i>
-                                <h1>Web Development</h1>
-
-                            </div>
-                        </div>
+                        <button type="button"  class="btn" onclick=" locura () "> 
+                            Calcular 
+                        </button>
+                    
                     </div>
+                    <div id="answer" class="ease">
+                        <div id="porcentaje"></div>
+                    </div>
+                    <div id="btnVolver" style="display:none">
+                        <button type="button" class="btn"  onclick=" hello () "> Volver </button>
+                    </div>
+
+                
+                <h1 id="edad"></h1> 
                 </div>
-
-                <!-- Paso 3 -->
-                <div class="box paso3" id="paso3">
-                   <ul id="myItemList"></ul>
-                </div>    
             </div>
-            
-
+            <p style="text-align: center;">Elaborado por Johanna Caraballo</p>
         
       </body> 
 
