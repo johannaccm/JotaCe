@@ -1,19 +1,22 @@
-const servicios = [
-    {
-        tipo : "Diseño",
-        detalle : "Elaboración de logotipo",
-        precio : "CLP $60.000",
-        entrega : "5 días hábiles",
-        comentario : "El cliente debe entregar nombre de la empresa"
-    },
-    {
-        tipo : "Desarrollo",
-        detalle : "Elaboración de página web",
-        precio : "CLP $1.000.000",
-        entrega : "Según complejidad",
-        comentario : "El cliente debe entregar pagar un 50% para empezar."
-    },
+const designServices = [
+    'Diseño de logotipo',
+    'Diseño de Manual de Marca',
+    'Asesoría sobre proyectos',
+    'Grid de posts para RRSS',
+    'Diseño de e-mail'
 ]
+
+const developServices = [
+    'Diseño y desarrollo web',
+    'Diseño y desarrollo de interfaces',
+    'Páginas en Wordpress',
+    'Mantenimiento y asesorías en Wordpress',
+    'Diseño y desarrollo de e-mails'
+]
+
+
+
+
 
 // BUTTON DISABLED IF INPUT IS EMPTY
 let next = document.getElementById("next");
@@ -63,29 +66,72 @@ let developOption = document.getElementById("webDevelop");
     designOption.addEventListener('mouseleave', designHover);
 
 // OPTIONS SELECTED
+function designList () {
+    let itemDiv = document.getElementById('myItemList');
 
-let video = document.getElementById("myVideo")
+    
+    let ul = document.createElement('ul');
+    ul.setAttribute('style', 'padding: 0; margin: 0;');
+    ul.setAttribute('id', 'theList');
 
-// let next = document.getElementById("next");
+    for (i = 0; i <= designServices.length - 1; i++) {
+        let li = document.createElement('li');     
+        li.innerHTML = designServices[i];      
+        ul.appendChild(li);    
+    }
+
+    itemDiv.appendChild(ul);  
+}
+
+function developList () {
+    let itemDiv = document.getElementById('myItemList');
+
+    
+    let ul = document.createElement('ul');
+    ul.setAttribute('style', 'padding: 0; margin: 0;');
+    ul.setAttribute('id', 'theList');
+
+    for (i = 0; i <= developServices.length - 1; i++) {
+        let li = document.createElement('li');     
+        li.innerHTML = developServices[i];      
+        ul.appendChild(li);    
+    }
+
+    itemDiv.appendChild(ul);  
+}
+  
 
 designOption.style.cursor = 'pointer';
-
 designOption.onclick = function() {
-    let nameValue = document.getElementById("name").value;
-    ul = document.createElement('ul');
-    let list = document.getElementById("myList");
-
-    video.src = "./images/design.mp4";
     siguiente2 ();
-    paso3.innerHTML += "<h2> ¡Genial " + nameValue + "!</h2>"
-    paso3.innerHTML += "<p>Te presento a continuación el detalle del servicio</p>"
-    console.log(tipo)
     
 
+    let nameValue = document.getElementById("name").value;
+    let video = document.getElementById("myVideo")
+    video.src = "./images/design.mp4";
+    
+    paso3.innerHTML += "<h2> ¡Genial " + nameValue + "!</h2>";
+    paso3.innerHTML += "<p>Te presento a continuación el detalle del servicio</p>";
+    designList ()
    
 };
 
+developOption.style.cursor = 'pointer';
+developOption.onclick = function() {
+    siguiente2 ();
+    
 
+    let nameValue = document.getElementById("name").value;
+    
+    paso3.innerHTML += "<h2> ¡Genial " + nameValue + "!</h2>";
+    paso3.innerHTML += "<p>Te presento a continuación el detalle del servicio</p>";
+    developList ()
+   
+};
+
+function reload(){
+    location.reload();
+}
 
 
 // CUSTOMIZED POINTER
@@ -93,7 +139,6 @@ let circle = document.querySelector(".cr");
 let dot = document.querySelector(".dot");
 let body = document.querySelector("body");
 let btn = document.getElementsByClassName("btn")
-
 
 body.addEventListener("mousemove", moveCursor)
 
