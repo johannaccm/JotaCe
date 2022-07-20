@@ -133,6 +133,7 @@ function getUserName (target){
     <button type="button"  class="btn" id="next" onclick="nextValidator()"> 
         Siguiente
     </button>
+    </div>
     
     `;
     
@@ -146,7 +147,7 @@ function nextValidator(){
     let userName = document.getElementById('username').value;
 
     if (userName === ""){
-        alert('Por favor Ingrese su nombre')
+        swal("Error", "Por favor ingrese su nombre", "error");
     } else{
         renderCategories (services, contenedor)
     }
@@ -260,11 +261,14 @@ const renderSubcategories = (event) => {
             contenedor.innerHTML = "";
             content = "";
             
-            content += `<h1> Hola ${nombre} </h1>
-            <p>Gracias por tu interés sin embargo aún no he desarrollado
-            el formulario de contacto. ¡Adiós!
-            <p>
-            <button onclick="reload()" class="btn"> Volver al inicio </button>            
+            content += `
+            <div class="row boxWrap last-step">
+            <h1> Hola ${nombre} </h1>
+            <p>Gracias por tu interés, para poder comunicarme contigo ingresa a continuación tu correo
+            electrónico<p>
+            <input type="text" id="mail" placeholder="e-mail" >
+            <button onclick="reload()" class="btn"> Enviar y volver al inicio </button>
+            </div>            
             `
 
         
@@ -285,7 +289,7 @@ function reload(){
 }
 
 
-const volverCategorias = (event) => {
+const volverCategorias = () => {
     content = "";
     contenedor.innerHTML= content;
     renderCategories(services, contenedor);

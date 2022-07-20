@@ -222,3 +222,7 @@ input[type=text]:focus{
     font-weight: 400;
     padding-top: 20px;
 }
+
+.last-step{
+    text-align: center;
+}
