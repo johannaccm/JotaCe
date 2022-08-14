@@ -116,8 +116,6 @@ const services = [
     },
 ]
 
-
-
 // CREA Y MUESTRA CATEGORIAS
 const contenedor = document.getElementById('containerBoxes');
 let content = '';
@@ -133,7 +131,6 @@ function getUserName (target){
     <button type="button"  class="btn" id="next" onclick="nextValidator()"> 
         Siguiente
     </button>
-    </div>
     
     `;
     
@@ -147,7 +144,7 @@ function nextValidator(){
     let userName = document.getElementById('username').value;
 
     if (userName === ""){
-        swal("Error", "Por favor ingrese su nombre", "error");
+        alert('Por favor Ingrese su nombre')
     } else{
         renderCategories (services, contenedor)
     }
@@ -183,8 +180,6 @@ const renderCategories = (servicesArray, target) => {
     const buttons = document.querySelectorAll('.btnSelect');
     buttons.forEach(button => button.addEventListener('click', renderSubcategories));
 }
-
-
 
 // CREA Y MUESTRA SUB-CATEGORIAS 
 const renderSubcategories = (event) => {
@@ -248,7 +243,6 @@ const renderSubcategories = (event) => {
             
         };
      
-
         function storeInfo (event){
             const id = event.target.id;
             let arrayStorage = menuList.find(list => list.menuTitle === id);
@@ -261,14 +255,11 @@ const renderSubcategories = (event) => {
             contenedor.innerHTML = "";
             content = "";
             
-            content += `
-            <div class="row boxWrap last-step">
-            <h1> Hola ${nombre} </h1>
-            <p>Gracias por tu interés, para poder comunicarme contigo ingresa a continuación tu correo
-            electrónico<p>
-            <input type="text" id="mail" placeholder="e-mail" >
-            <button onclick="reload()" class="btn"> Enviar y volver al inicio </button>
-            </div>            
+            content += `<h1> Hola ${nombre} </h1>
+            <p>Gracias por tu interés sin embargo aún no he desarrollado
+            el formulario de contacto. ¡Adiós!
+            <p>
+            <button onclick="reload()" class="btn"> Volver al inicio </button>            
             `
 
         
@@ -289,7 +280,7 @@ function reload(){
 }
 
 
-const volverCategorias = () => {
+const volverCategorias = (event) => {
     content = "";
     contenedor.innerHTML= content;
     renderCategories(services, contenedor);
